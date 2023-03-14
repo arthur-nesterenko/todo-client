@@ -1,3 +1,106 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.html {
+    @apply font-mark-pro;
+}
+
+:root {
+    --cool-grey: #9ea3b2;
+    --silver: #d7dae0;
+    --cool-grey-two: #a1a4ad;
+    --dark-sky-blue: #4a77e5;
+    --white: #e1e1e1;
+    --dark-blue-grey: #1f2a4b;
+}
+
+.text-style {
+    @apply font-mark-pro;
+    font-size: 22px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--dark-blue-grey);
+}
+
+.text-style-5 {
+    @apply font-mark-pro;
+    font-size: 22px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--dark-blue-grey);
+}
+
+.text-style-4 {
+    @apply font-mark-pro;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--cool-grey-two);
+}
+
+.text-style-3 {
+    @apply font-mark-pro;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--dark-blue-grey);
+}
+
+.text-style-2 {
+    @apply font-mark-pro;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+}
+
+.text-style-6 {
+    @apply font-mark-pro;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--dark-blue-grey);
+}
+
+
+.form-input {
+    @apply text-style-3 w-full;
+    border-bottom: var(--white) solid 1px;
+    padding-bottom: 10px;
+}
+
+.form-input:focus {
+    outline: none;
+    border-bottom-color: var(--dark-sky-blue);
+}
+
+
+.button {
+    @apply text-style-2;
+    height: 36px;
+    padding: 8px;
+    border-radius: 4px;
+    border: solid 1px var(--dark-sky-blue);
+    background-color: var(--dark-sky-blue);
+}
+
