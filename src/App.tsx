@@ -1,7 +1,11 @@
-import React from 'react';
+import {Suspense} from 'react';
 import './assets/index.css';
-
 import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
+import {
+    RouterProvider,
+} from "react-router-dom";
+
+import router from './routes'
 
 const client = new ApolloClient({
     uri: '/graphql',
@@ -10,9 +14,11 @@ const client = new ApolloClient({
 
 
 function App() {
-    return <ApolloProvider client={client}>
-        <h1>Hi there</h1>
-    </ApolloProvider>
+    return <Suspense fallback={<div className='h-screen flex flex-col items-center justify-center'>Loading</div>}>
+        <ApolloProvider client={client}>
+            <RouterProvider router={router}/>
+        </ApolloProvider>
+    </Suspense>
 }
 
 export default App;
