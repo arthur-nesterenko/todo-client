@@ -2,7 +2,7 @@ import {
     createBrowserRouter,
 } from "react-router-dom";
 import {lazy} from "react";
-import {ProtectedLayout} from "../layout";
+import {ProtectedLayout, AuthLayout} from "../layout";
 
 const SignIn = lazy(() => import('./sign-in'))
 const SignUp = lazy(() => import('./sign-up'))
@@ -20,13 +20,19 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path: "/sign-in",
-        element: <SignIn/>,
+        element: <AuthLayout/>,
+        children: [
+            {
+                path: "/sign-in",
+                element: <SignIn/>,
+            },
+            {
+                path: "/sign-up",
+                element: <SignUp/>,
+            }
+        ]
     },
-    {
-        path: "/sign-up",
-        element: <SignUp/>,
-    }
+
 ]);
 
 
