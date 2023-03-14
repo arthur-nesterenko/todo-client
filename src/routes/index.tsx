@@ -1,11 +1,6 @@
-import {
-    createBrowserRouter,
-} from "react-router-dom";
-import {lazy} from "react";
-import {ProtectedLayout, AuthLayout} from "../layout";
+import {createBrowserRouter} from "react-router-dom";
 
-const SignIn = lazy(() => import('./sign-in'))
-const SignUp = lazy(() => import('./sign-up'))
+import {ProtectedLayout, AuthLayout} from "../layout";
 
 
 const router = createBrowserRouter([
@@ -24,11 +19,11 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/sign-in",
-                element: <SignIn/>,
+                lazy: () => import("./sign-in"),
             },
             {
                 path: "/sign-up",
-                element: <SignUp/>,
+                lazy: () => import("./sign-up"),
             }
         ]
     },
