@@ -1,4 +1,3 @@
-import {Suspense} from 'react';
 import './assets/index.css';
 import {ApolloClient, InMemoryCache, ApolloProvider, createHttpLink} from '@apollo/client';
 import {setContext} from '@apollo/client/link/context';
@@ -32,13 +31,14 @@ const client = new ApolloClient({
 
 
 function App() {
-    return <Suspense fallback={<div className='h-screen flex flex-col items-center justify-center'>Loading</div>}>
+    return <div className='h-screen flex flex-col items-center justify-center bg-[#f6f7f8]'>
         <ApolloProvider client={client}>
             <AuthProvider>
-                <RouterProvider router={router}/>
+                <RouterProvider router={router} fallbackElement={<div
+                    className='h-screen flex flex-col items-center justify-center'>Loading</div>}/>
             </AuthProvider>
         </ApolloProvider>
-    </Suspense>
+    </div>
 }
 
 export default App;

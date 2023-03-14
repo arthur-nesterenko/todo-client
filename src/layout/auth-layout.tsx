@@ -16,9 +16,8 @@ const AuthLayout = () => {
         return <Navigate to={redirect} replace/>
     }
 
-    return <div className='h-screen flex flex-col items-center justify-center bg-[#f6f7f8]'>
-        <Outlet/>
-    </div>
+    return <Outlet/>
+
 }
 
 
