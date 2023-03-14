@@ -7,13 +7,20 @@ import {
 } from "react-router-dom";
 
 const ProtectedLayout = () => {
-    const {isLoggedIn} = useAuth();
+    const {isLoggedIn, signOut} = useAuth();
     let location = useLocation();
     if (!isLoggedIn) {
         return <Navigate to="/sign-in" state={{from: location}} replace/>;
     }
 
-    return <Outlet/>
+    return <>
+        <header className='absolute right-2 top-2'>
+            <button className='text-style-6 hover:underline' onClick={signOut}>
+                Logout
+            </button>
+        </header>
+        <Outlet/>
+    </>
 }
 
 

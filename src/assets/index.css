@@ -23,7 +23,6 @@
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    text-align: center;
     color: var(--dark-blue-grey);
 }
 
@@ -96,11 +95,31 @@
 
 
 .button {
-    @apply text-style-2;
+    @apply text-style-2 transition-opacity duration-300 ease-in-out;
     height: 36px;
     padding: 8px;
     border-radius: 4px;
     border: solid 1px var(--dark-sky-blue);
     background-color: var(--dark-sky-blue);
+
 }
 
+.button:hover {
+    opacity: 0.8;
+}
+
+.button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+
+}
+
+.show-text {
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(31, 42, 75, 0.59)
+}
