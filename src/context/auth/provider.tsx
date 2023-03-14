@@ -48,7 +48,8 @@ const AuthProvider = ({children}: { children: ReactNode }) => {
         client.clearStore();
     }, [client]);
 
-    const signIn = useCallback(async () => {
+    const signIn = useCallback(async (token: string) => {
+        TokenService.set(token);
         await client.query({
             query: GET_ME,
         });

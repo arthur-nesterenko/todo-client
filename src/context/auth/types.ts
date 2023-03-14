@@ -1,5 +1,7 @@
 export type AuthContextType = {
     isLoggedIn: boolean;
+    signIn: (token: string) => void;
+    signOut: () => void;
 }
 
 
@@ -7,10 +9,6 @@ export type AuthState = {
     isLoggedIn: boolean;
     isLoading: boolean;
 }
-
-type RestoreTokenPayload = {
-    token: string | null;
-};
 
 export type AuthAction =
     | { type: 'SIGN_IN' }
